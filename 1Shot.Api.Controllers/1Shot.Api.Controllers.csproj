@@ -12,4 +12,10 @@
 		<OutputPath>C:\Program Files\NETProjects\Gizmo Server\webmodules\1Shot.Api.Controllers</OutputPath>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\Submodules\DataInterfaces\DataInterfaces\DataInterfaces.csproj" />
+	  <ProjectReference Include="..\Submodules\Gizmo.DAL.Entites\Gizmo.DAL.Entities.csproj" />
+	  <ProjectReference Include="..\Submodules\Gizmo.Shared\Gizmo.Shared.csproj" />
+	</ItemGroup>
+
 </Project>

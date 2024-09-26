@@ -1,3 +1,4 @@
+using Gizmo.DAL;
 using Microsoft.AspNetCore.Mvc;
 
 namespace _1Shot.Api.Controllers.Controllers
@@ -13,14 +14,24 @@ namespace _1Shot.Api.Controllers.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(IGizmoDbContextProvider gizmoDbContextProvider , ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
+            _gizmoDbContextProvider = gizmoDbContextProvider;
         }
 
+        private readonly IGizmoDbContextProvider _gizmoDbContextProvider;
+
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public IEnumerable<object> Get()
         {
+            using (var dbContext = _gizmoDbContextProvider.GetDbNonProxyContext())
+            {
+               var apps = dbContext.QueryableSet<Gizmo.DAL.Entities.App>();
+                return apps.Select(a => new { Title = a.Title}).ToArray();
+
+            }
+
 
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {

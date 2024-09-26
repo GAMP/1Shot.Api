@@ -1,0 +1,12 @@
+[submodule "Submodules/Gizmo.Shared"]
+	path = Submodules/Gizmo.Shared
+	url = https://github.com/GAMP/Gizmo.Shared
+	branch = dev
+[submodule "Submodules/DataInterfaces"]
+	path = Submodules/DataInterfaces
+	url = https://github.com/GAMP/DataInterfaces
+	branch = dev
+[submodule "Submodules/Gizmo.DAL.Entites"]
+	path = Submodules/Gizmo.DAL.Entites
+	url = https://github.com/GAMP/Gizmo.DAL.Entities
+	branch = dev
