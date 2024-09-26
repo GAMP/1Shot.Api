@@ -1,0 +1,13 @@
+﻿{
+  "profiles": {
+    "Gizmo.Server": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\NETProjects\\Gizmo Server\\GizmoService.exe",
+      "commandLineArgs": "",
+      "workingDirectory": "C:\\Program Files\\NETProjects\\Gizmo Server\\",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
