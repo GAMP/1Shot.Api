@@ -1,5 +1,7 @@
 using _1Shot.Api.Controllers.Models;
 using Gizmo.DAL;
+using Gizmo.Server;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Data.Entity;
 
@@ -7,6 +9,7 @@ namespace _1Shot.Api.Controllers.Controllers
 {
     [ApiController]
     [Route("api/oneshot")]
+    [Authorize(AuthenticationSchemes = "Basic,Bearer", Roles = ClaimNames.OperatorRoleName, Policy = "access-web-api")]  //add auth requirements
     public class OneShotController : ControllerBase
     {
         private readonly IGizmoDbContextProvider _gizmoDbContextProvider;
